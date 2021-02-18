@@ -1,0 +1,64 @@
+{
+  "name": "tinance",
+  "version": "0.0.0-development",
+  "description": "CLI price tool for cryptoheads 💸💻",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js",
+    "babel-start": "babel-node src/index.js",
+    "format": "prettier \"src/**/*.js\" --write",
+    "lint": "eslint \"src/**/*.js\" --quiet",
+    "build": "babel src -d dist/",
+    "postbuild": "cp package.json dist",
+    "semantic-release": "semantic-release"
+  },
+  "bin": {
+    "tinance": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panlazy/tinance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/panlazy/tinance/issues"
+  },
+  "homepage": "https://github.com/panlazy/tinance#readme",
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "cli",
+    "terminal",
+    "ncurses",
+    "cryptocurrency",
+    "bitcoin",
+    "etherium",
+    "command-line",
+    "btc",
+    "price-tracker"
+  ],
+  "author": "panlazy",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^2.4.2",
+    "commander": "^4.1.1",
+    "console-table-printer": "^2.7.5",
+    "humanize-plus": "^1.8.2",
+    "ora": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/node": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "replace-json-property": "^1.6.3",
+    "semantic-release": "^17.3.9"
+  }
+}
