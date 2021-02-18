@@ -9,7 +9,7 @@
     "format": "prettier \"src/**/*.js\" --write",
     "lint": "eslint \"src/**/*.js\" --quiet",
     "build": "babel src -d dist/",
-    "postbuild": "cp package.json dist"
+    "postbuild": "cp package.json LICENSE README.md dist/ && cd ./dist"
   },
   "bin": {
     "tinance": "./dist/index.js"
