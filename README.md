@@ -1,6 +1,13 @@
 <p align="center">
   <img src="https://i.imgur.com/iMxSX2r.png" alt="tinance-logo">
 </p>
+<p align="center">
+  <img src="https://github.com/panlazy/tinance/workflows/tinance/badge.svg" alt="actions-badge">
+  <a href="https://github.com/panlazy/tinance/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-GPLv3-blue" alt="license"></a>
+</p>
+<p align="center">
+  <a href="https://nodei.co/npm/tinance/"><img src="https://nodei.co/npm/tinance.png?compact=true"></a>
+</p>
 
 > CLI tool made by cryptohead for cryptoheads. 🤯
 
