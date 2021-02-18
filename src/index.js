@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import commander from 'commander'; /** Get helpers */
 import { validateNumber, validateCurrency } from './helpers/validation';
 import { getRates } from './helpers/rates';
