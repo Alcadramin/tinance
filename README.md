@@ -23,7 +23,7 @@
 ❯ npm install -g tinance
 ```
 
-- For now I only published the package to `npm`. Publishing to `Aur`, `Flatpak` and releasing as `.deb`, `.rpm` is in my roadmap. Soon ™️.
+- For now I only published the package to `npm`. More releases coming soon ™️.
 
 ## Usage
 
@@ -37,7 +37,8 @@
 
 ```bash
 ❯ tinance --top 30 // Get top 30
-❯ tinance --currency // Convert to your prefered currency like 'EUR'
+❯ tinance --currency EUR // Convert to your prefered currency like 'EUR' or 'CAD'
+❯ tinance --filter bitcoin ethereum // Filter by your favorite cryptocurrency. It will convert to USD by default.
 ```
 
 - Show help text

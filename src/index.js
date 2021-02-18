@@ -13,6 +13,9 @@ let defaults = {
   currency: 'USD',
 };
 
+/** API */
+let sourceURI = `https://api.coincap.io/v2/assets?`;
+
 /** Arguments */
 const app = new commander.Command();
 app
@@ -24,20 +27,28 @@ app
     'USD'
   )
   .option('-t, --top <value>', 'Get top X currency.', validateNumber, 20)
+  .option('-f, --filter <values...>', 'Filter by rates')
   .parse(process.argv);
 
 const options = app.opts();
 
 if (options.currency) {
-  defaults.currency = options.currency;
+  defaults.currency = options.currency.toUpperCase();
 }
 
 if (options.top) {
   defaults.top = `${options.top}`;
 }
 
-/** Get rates */
-const sourceURI = `https://api.coincap.io/v2/assets?limit=${defaults.top}&convert=${defaults.currency}`;
+if (options.filter) {
+  const args =
+    `${options.filter}` + `${app.args.length ? ',' + app.args.join(',') : ''}`;
+  sourceURI += `ids=${args}&`;
+}
+
+sourceURI += `limit=${defaults.top}`;
+
+console.log(sourceURI);
 
 /** Start the spinner */
 const spinner = ora('Fetching data hang on! 💰');
@@ -45,7 +56,7 @@ spinner.start();
 
 const fetch = async () => {
   /** Fetch data from API */
-  const data = await getRates(sourceURI, [], defaults.currency);
+  const data = await getRates(sourceURI, [], defaults.currency, spinner);
 
   /** Stop the spinner */
   spinner.stop();

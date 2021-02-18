@@ -3,17 +3,36 @@ import humanize from 'humanize-plus';
 import chalk from 'chalk';
 
 module.exports = {
-  getRates: async (source, val, cur) => {
+  getRates: async (source, val, cur, spinner) => {
     await axios
       .get(source)
-      .then((res) => {
+      .then(async (res) => {
+        if (res.data.data.length < 1) {
+          spinner.stop();
+          console.log(
+            '❎ ' +
+              chalk.red('You probably provided invalid options, try again.')
+          );
+
+          process.exit();
+        }
+
+        cur !== 'USD'
+          ? await axios.get(`https://api.coincap.io/v2/rates`).then((res) => {
+              cur = res.data.data.filter((el) => el.symbol === cur);
+            })
+          : cur;
+
         res.data.data.map((el) => {
           val.push({
             Rank: chalk.blue(el.rank),
             Name: chalk.cyan(el.name),
             Symbol: chalk.yellow(el.symbol),
             Price:
-              humanize.formatNumber(el.priceUsd, 4) + chalk.bold(` ${cur}`),
+              humanize.formatNumber(
+                cur === 'USD' ? el.priceUsd : el.priceUsd / cur[0].rateUsd,
+                4
+              ) + chalk.bold(` ${cur !== 'USD' ? cur[0].symbol : cur}`),
             'Change (24hr)':
               parseFloat(el.changePercent24Hr) < 0
                 ? chalk.red(parseFloat(el.changePercent24Hr).toFixed(4) + ' %')
@@ -29,8 +48,12 @@ module.exports = {
           });
         });
       })
-      .catch((err) => {
-        console.error(err);
+      .catch(() => {
+        spinner.stop();
+        console.log(
+          '❎ ' + chalk.red('Something went wrong, try again later.')
+        );
+        process.exit();
       });
 
     return Promise.all(val);
