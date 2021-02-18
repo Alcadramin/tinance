@@ -9,8 +9,7 @@
     "format": "prettier \"src/**/*.js\" --write",
     "lint": "eslint \"src/**/*.js\" --quiet",
     "build": "babel src -d dist/",
-    "postbuild": "cp package.json dist",
-    "semantic-release": "semantic-release"
+    "postbuild": "cp package.json dist"
   },
   "bin": {
     "tinance": "./dist/index.js"
@@ -57,8 +56,6 @@
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "nodemon": "^2.0.7",
-    "prettier": "^2.2.1",
-    "replace-json-property": "^1.6.3",
-    "semantic-release": "^17.3.9"
+    "prettier": "^2.2.1"
   }
 }
