@@ -23,7 +23,9 @@ module.exports = {
             'Volume (24hr)': humanize.compactInteger(el.volumeUsd24Hr, 1),
             Supply: humanize.compactInteger(el.supply, 1),
             'Market Cap': humanize.compactInteger(el.marketCapUsd, 1),
-            'Max Supply': humanize.compactInteger(el.maxSupply, 1),
+            'Max Supply': el.maxSupply
+              ? humanize.compactInteger(el.maxSupply, 1)
+              : '',
           });
         });
       })
