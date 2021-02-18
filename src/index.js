@@ -45,8 +45,7 @@ spinner.start();
 
 const fetch = async () => {
   /** Fetch data from API */
-  const arr = [];
-  const data = await getRates(sourceURI, arr);
+  const data = await getRates(sourceURI, [], defaults.currency);
 
   /** Stop the spinner */
   spinner.stop();
@@ -65,7 +64,7 @@ const fetch = async () => {
 /** Cold start :P */
 fetch();
 
-/** Refresh every 5 minutes */
+/** Refresh every 10 seconds */
 setInterval(() => {
   fetch();
-}, 5 * 60 * 1000);
+}, 10 * 1000);

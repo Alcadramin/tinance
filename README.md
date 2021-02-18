@@ -2,11 +2,11 @@
   <img src="https://i.imgur.com/iMxSX2r.png" alt="tinance-logo">
 </p>
 
-> CLI tool made by cryptohead for cryptoheads. Also an Arch user. 🤯
+> CLI tool made by cryptohead for cryptoheads. 🤯
 
 - Check cryptocurrency prices from your terminal! 💰
 - Price data is provided by [Coincap](https://coincap.io/)'s public API. ✌
-- It will auto refresh the data every 5 minutes.
+- It will auto refresh the data every 10 seconds.
 
 ## Install
 
