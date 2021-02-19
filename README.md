@@ -12,18 +12,24 @@
 > CLI tool made by cryptohead for cryptoheads. 🤯
 
 - Check cryptocurrency prices from your terminal! 💰
-- Price data is provided by [Coincap](https://coincap.io/)'s public API. ✌
 - It will auto refresh the data every 10 seconds.
+- Price data is provided by [Coincap](https://coincap.io/)'s public API. ✌
 
 ## Install
 
-- Install it with npm.
+- Install with npm.
 
 ```bash
 ❯ npm install -g tinance
 ```
 
-- For now I only published the package to `npm`. More releases coming soon ™️.
+- You can also install from AUR. Install with your favorite AUR helper.
+
+```bash
+❯ yay -S tinance
+```
+
+- For now I only published the package to `npm` and `AUR`. More releases coming soon ™️.
 
 ## Usage
 

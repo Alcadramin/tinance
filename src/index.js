@@ -19,7 +19,7 @@ let sourceURI = `https://api.coincap.io/v2/assets?`;
 /** Arguments */
 const app = new commander.Command();
 app
-  .version('0.0.1')
+  .version('0.0.4')
   .option(
     '-c, --currency <value>',
     'Convert to desired currency.',
@@ -27,7 +27,7 @@ app
     'USD'
   )
   .option('-t, --top <value>', 'Get top X currency.', validateNumber, 20)
-  .option('-f, --filter <values...>', 'Filter by rates')
+  .option('-f, --filter <values...>', 'Filter by your favorite cryptocurrency.')
   .parse(process.argv);
 
 const options = app.opts();
