@@ -15,43 +15,52 @@
 - It will auto refresh the data every 10 seconds.
 - Price data is provided by [Coincap](https://coincap.io/)'s public API. ✌
 
+<p align="center">
+  <img src="https://i.imgur.com/18YRyqM.png">
+</p>
+
 ## Install
 
 - Install with npm.
 
-```bash
-❯ npm install -g tinance
+```shell
+$ npm install -g tinance
 ```
 
 - You can also install from AUR. Install with your favorite AUR helper.
 
-```bash
-❯ yay -S tinance
+```shell
+$ yay -S tinance
 ```
-
-- For now I only published the package to `npm` and `AUR`. More releases coming soon ™️.
 
 ## Usage
 
-- Use with default parameters. (USD, Top 20 currencies)
+- Use with default parameters. (USD, Top 20 currencies, Run once)
 
-```bash
-❯ tinance
+```shell
+$ tinance
 ```
 
 - Options
 
-```bash
-❯ tinance --top 30 // Get top 30
-❯ tinance --currency EUR // Convert to your prefered currency like 'EUR' or 'CAD'
-❯ tinance --filter bitcoin ethereum // Filter by your favorite cryptocurrency. It will convert to USD by default.
-```
-
-- Show help text
-
-```bash
-❯ tinance --help
-```
+  - **`--help`**: Show help text
+    ```shell
+    $ tinance --help
+    ```
+  - **`--top` or `-t`**: Get top `x` cryptocurrencies. Default: `20`
+    ```shell
+    $ tinance --top 30 # Get top 30
+    ```
+  - **`--convert` or `-c`**: Convert price to preferred currency. Default: `USD`
+    ```shell
+    $ tinance --currency EUR # Convert to your prefered currency like 'EUR' or 'CAD'
+    ```
+  - **`--filter` or `-f`**: Filter by preferred cryptocurrency.
+    ```shell
+    $ tinance --filter bitcoin ethereum # Filter by your favorite cryptocurrency. It will convert to USD by default.
+    ```
+  - **`--refresh`**: Enable auto refresh. (Every 10 seconds)
+    <br />
 
 - Valid currencies to convert price
   - USD
@@ -90,7 +99,8 @@
 
 ## Contribution
 
-- Please use ES6 syntax, we are using babel and prettier. Any PR is welcome.
+- Please use ES6 syntax, we are using babel and prettier to keep tidy our code. Any PR is welcome.
+- If you can't code, you can leave a star! 🌟
 
 ## License
 

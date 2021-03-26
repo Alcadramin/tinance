@@ -44,7 +44,7 @@ module.exports = {
             'Market Cap': humanize.compactInteger(el.marketCapUsd, 1),
             'Max Supply': el.maxSupply
               ? humanize.compactInteger(el.maxSupply, 1)
-              : '',
+              : 'N/A',
           });
         });
       })
