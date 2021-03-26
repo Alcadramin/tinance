@@ -27,11 +27,13 @@
 $ npm install -g tinance
 ```
 
-- You can also install from AUR. Install with your favorite AUR helper.
+- You can install from AUR. Install with your favorite AUR helper.
 
 ```shell
 $ yay -S tinance
 ```
+
+- You can get binaries from [releases](https://github.com/redgroot/tinance/releases). (currently only `.rpm` and `.deb`)
 
 ## Usage
 
