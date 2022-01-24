@@ -43,7 +43,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "@acransac/terminal": "^1.0.1",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "chalk": "^2.4.2",
     "commander": "^4.1.1",
     "console-table-printer": "^2.7.5",
